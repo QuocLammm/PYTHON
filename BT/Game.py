@@ -43,7 +43,7 @@ class Rectangle(pygame.sprite.Sprite):
         screen.blit(self.surface, self.rect)
 
 class Game:
-
+    
     def __init__(self):
         # Initialize pygame object
         pygame.init()

@@ -1,4 +1,4 @@
 import cowsay
 import sys
 if len(sys.argv) == 2:
-    cowsay.trex("hello, " + sys.argv[1])
+    cowsay.trex("I Love , " + sys.argv[1])

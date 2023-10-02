@@ -133,7 +133,7 @@ def gameStart(bg):
     headingSize = headingSuface.get_size()
 
     font = pygame.font.SysFont('consolas', 20)
-    commentSuface = font.render('Press "space" to play', True, (0, 0, 0))
+    commentSuface = font.render('Press "SPACE" to play', True, (0, 0, 0))
     commentSize = commentSuface.get_size()
     while True:
         for event in pygame.event.get():
@@ -200,7 +200,7 @@ def gameOver(bg, car, obstacles, score):
     headingSize = headingSuface.get_size()
 
     font = pygame.font.SysFont('consolas', 20)
-    commentSuface = font.render('Press "space" to replay', True, (0, 0, 0))
+    commentSuface = font.render('Press "SPACE" to replay', True, (0, 0, 0))
     commentSize = commentSuface.get_size()
     while True:
         for event in pygame.event.get():
