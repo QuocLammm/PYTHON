@@ -1,3 +1,12 @@
+#hãy triển khai một chương trình nhắc người tiêu dùng 
+#nhập một loại trái cây (không phân biệt chữ hoa chữ thường) và sau đó xuất ra số
+#lượng calo trong một phần của loại trái cây đó, theo áp phích của FDA dành cho 
+#trái cây, cũng có sẵn dưới dạng văn bản . Bỏ viết hoa sang một bên, giả sử rằng 
+#người dùng sẽ nhập trái cây chính xác như được viết trên áp phích (ví 
+#dụ: strawberries, không phải strawberry). Bỏ qua bất kỳ đầu vào nào không phải 
+#là trái cây.
+
+
 def get_fruit_calories(fruit):
     # Tạo một từ điển liên kết trái cây với lượng calo
     fruit_calories = {
@@ -32,12 +41,12 @@ def get_fruit_calories(fruit):
         return None
 
 def main():
-    fruit = input("Nhập loại trái cây: ")
+    fruit = input("Item: ")
     calories = get_fruit_calories(fruit)
     
     # Xuất kết quả
     if calories is not None:
-        print(f"Số lượng calo trong một phần {fruit} là: {calories} calo.")
+        print(f"Calories: {calories}")
     else:
         print("Không tìm thấy thông tin calo cho loại trái cây này.")
 main()

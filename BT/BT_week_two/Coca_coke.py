@@ -1,3 +1,9 @@
+#hãy triển khai một chương trình nhắc người dùng 
+#chèn từng đồng xu vào mỗi lần, thông báo cho người dùng về số tiền còn nợ. Sau 
+#khi người dùng đã nhập ít nhất 50 xu, hãy xuất ra số xu mà người dùng còn nợ. Giả
+#sử rằng người dùng sẽ chỉ nhập số nguyên và bỏ qua bất kỳ số nguyên nào không 
+#phải là mệnh giá được chấp nhận.
+
 def main():
     # Giá của chai Coca-Cola trong xu
     coke_price = 50
