@@ -19,9 +19,8 @@ def main():
             names.append(name)
     except EOFError:
         pass  # Khi người dùng nhấn  Ctrl-Z 
-
-    farewell_message = generate_farewell(names)
-    print(farewell_message)
+    
+    print(generate_farewell(names))
 
 if __name__ == "__main__":
     main()

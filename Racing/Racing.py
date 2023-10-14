@@ -1,33 +1,39 @@
 import pygame, sys, random
 from pygame.locals import *
-
+#Tạo cửa sổ game
 WINDOWWIDTH = 400
 WINDOWHEIGHT = 600
 
 X_MARGIN = 80
 LANEWIDTH = 60
-
+#tốc độ rẻ trái, rẻ phải của xe
 CARWIDTH = 40
 CARHEIGHT = 60
 CARSPEED = 3
 CARIMG = pygame.image.load('Racing/Img/car.png')
 
+#tốc độ xe chướng ngại vật
 DISTANCE = 200
 OBSTACLESSPEED = 2
 CHANGESPEED = 0.001
 OBSTACLESIMG = pygame.image.load('Racing/Img/obstacles.png')
 
+#tốc độ của ảnh
 BGSPEED = 1.5
 BGIMG = pygame.image.load('Racing/Img/background.png')
 
+#chạy cửa sổ
 pygame.init()
 
-FPS = 60
+#Chỉnh độ mượt mà của img
+FPS = 120
 fpsClock = pygame.time.Clock()
 
+# tạo cửa số game với chiều rộng chiều cao và tên game
 DISPLAYSURF = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT))
 pygame.display.set_caption('RACING')
 
+#Lớp hình nền:
 class Background():
     def __init__(self):
         self.x = 0
@@ -71,6 +77,7 @@ class Obstacles():
             lane = random.randint(0, 3)
             self.ls.append([lane, y])
 
+#Lớp xe
 class Car():
     def __init__(self):
         self.width = CARWIDTH
@@ -100,7 +107,7 @@ class Car():
             self.y = 0
         if self.y + self.height > WINDOWHEIGHT :
             self.y = WINDOWHEIGHT - self.height
-
+#Tính điểm
 class Score():
     def __init__(self):
         self.score = 0
@@ -116,6 +123,7 @@ def rectCollision(rect1, rect2):
         return True
     return False
 
+#Khi thua
 def isGameover(car, obstacles):
     carRect = [car.x, car.y, car.width, car.height]
     for i in range(5):
@@ -126,6 +134,7 @@ def isGameover(car, obstacles):
             return True
     return False
 
+#Bắt đầu game với hình nền
 def gameStart(bg):
     bg.__init__()
     font = pygame.font.SysFont('consolas', 60)
@@ -148,7 +157,8 @@ def gameStart(bg):
         DISPLAYSURF.blit(commentSuface, (int((WINDOWWIDTH - commentSize[0])/2), 400))
         pygame.display.update()
         fpsClock.tick(FPS)
-
+        
+#Chạy game
 def gamePlay(bg, car, obstacles, score):
     car.__init__()
     obstacles.__init__()
@@ -194,6 +204,7 @@ def gamePlay(bg, car, obstacles, score):
         pygame.display.update()
         fpsClock.tick(FPS)
 
+#Game kết thúc
 def gameOver(bg, car, obstacles, score):
     font = pygame.font.SysFont('consolas', 60)
     headingSuface = font.render('GAMEOVER', True, (255, 0, 0))
